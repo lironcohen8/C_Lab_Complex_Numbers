@@ -9,24 +9,23 @@ public class ComplexNumber {
 	public ComplexNumber(double realPart, double imaginaryPart) {
 		this.realPart = realPart;
 		this.imaginaryPart = imaginaryPart;
-		this.radius = getRadiusFromCartesian(realPart, imaginaryPart);
-		this.argument = getArgumentFromCartesian(realPart, imaginaryPart);
+		this.updatePolarMembers();
 	}
 	
 	public double getRealPart() {
-		return this.realPart;
+		return realPart;
 	}
 	
 	public double getImaginaryPart() {
-		return this.imaginaryPart;
+		return imaginaryPart;
 	}
 	
 	public double getRadius() {
-		return this.radius;
+		return radius;
 	}
 	
 	public double getArgument() {
-		return this.argument;
+		return argument;
 	}
 	
 	public ComplexNumber plus(ComplexNumber other) {
@@ -63,11 +62,8 @@ public class ComplexNumber {
 		return new ComplexNumber(realPart, imaginaryPart);
 	}
 	
-	private static double getRadiusFromCartesian(double realPart, double imaginaryPart) {
-		return Math.sqrt((realPart * realPart) + (imaginaryPart * imaginaryPart));
-	}
-	
-	private static double getArgumentFromCartesian(double realPart, double imaginaryPart) {
-		return Math.atan2(imaginaryPart, realPart);
+	private void updatePolarMembers() {
+		radius = Math.sqrt((realPart * realPart) + (imaginaryPart * imaginaryPart));
+		argument = Math.atan2(imaginaryPart, realPart);
 	}
 }
