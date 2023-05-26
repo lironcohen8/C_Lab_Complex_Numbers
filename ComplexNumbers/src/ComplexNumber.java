@@ -53,7 +53,7 @@ public class ComplexNumber {
 	}
 	
 	public boolean almostEquals(ComplexNumber other) {
-		return Math.abs(this.radius - other.radius) < EPSILON;
+		return this.minus(other).getRadius() < EPSILON;
 	}
 	
 	public static ComplexNumber fromPolarCoordinates(double radius, double argument) {
