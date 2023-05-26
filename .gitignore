@@ -2,3 +2,7 @@
 ComplexNumbers/.classpath
 ComplexNumbers/.project
 *.prefs
+# intelliJ
+.idea
+out
+*.iml
