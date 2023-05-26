@@ -12,6 +12,13 @@ public class ComplexNumber {
 		this.updatePolarMembers();
 	}
 	
+	private ComplexNumber(double realPart, double imaginaryPart, double radius, double argument) {
+		this.realPart = realPart;
+		this.imaginaryPart = imaginaryPart;
+		this.radius = radius;
+		this.argument = argument;
+	}
+	
 	public double getRealPart() {
 		return realPart;
 	}
@@ -59,7 +66,7 @@ public class ComplexNumber {
 	public static ComplexNumber fromPolarCoordinates(double radius, double argument) {
 		double realPart = radius * Math.cos(argument);
 		double imaginaryPart = radius * Math.sin(argument);
-		return new ComplexNumber(realPart, imaginaryPart);
+		return new ComplexNumber(realPart, imaginaryPart, radius, argument);
 	}
 	
 	private void updatePolarMembers() {
